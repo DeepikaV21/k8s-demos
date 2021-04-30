@@ -61,8 +61,15 @@ spec:
       - name: db
         image: postgres:9.4
         env:
+        env:
         - name: PGDATA
-          value: /var/lib/postgresql/data/pgdata
+        value: /var/lib/postgresql/data/pgdata
+        - name: POSTGRES_DB
+        value: db
+        - name: POSTGRES_PASSWORD
+        value: password
+        - name: POSTGRES_HOST_AUTH_METHOD
+        value: trust
         ports:
         - containerPort: 5432
           name: db
